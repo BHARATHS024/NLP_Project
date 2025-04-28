@@ -1,0 +1,66 @@
+<!-- frontend/templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Scheme Categorizer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="/">Scheme Categorizer</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/schemes">View Schemes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/notifications">
+                            Notifications <span class="badge bg-danger" id="notificationCount">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-8 mx-auto text-center">
+                <h1 class="mb-4">AI-Based Scheme Categorizing System</h1>
+                <p class="lead mb-4">Automatically categorize and notify about government schemes using NLP and machine learning</p>
+                
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h5 class="card-title">Add New Scheme</h5>
+                        <form id="schemeForm" class="mt-3">
+                            <div class="mb-3">
+                                <input type="text" class="form-control" id="schemeTitle" placeholder="Scheme Title" required>
+                            </div>
+                            <div class="mb-3">
+                                <textarea class="form-control" id="schemeDescription" rows="3" placeholder="Scheme Description" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit Scheme</button>
+                        </form>
+                        <div id="formResult" class="mt-3"></div>
+                    </div>
+                </div>
+                
+                <div class="mt-5">
+                    <button id="trainModelBtn" class="btn btn-secondary">Train/Retrain Model</button>
+                    <div id="trainingResult" class="mt-2"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/js/script.js"></script>
+</body>
+</html>

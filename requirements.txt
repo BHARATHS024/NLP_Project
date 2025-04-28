@@ -1,0 +1,7 @@
+# backend/requirements.txt
+flask
+flask-mysqldb
+scikit-learn
+nltk
+numpy
+python-dotenv
